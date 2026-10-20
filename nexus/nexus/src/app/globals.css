@@ -1,0 +1,23 @@
+@tailwind base; @tailwind components; @tailwind utilities;
+
+:root { --nx-bg: 10 10 15; --nx-panel: 19 19 28; --nx-line: 35 35 58; --nx-violet: 124 58 237; --nx-blue: 59 130 246; }
+html[data-theme="light"] { --nx-bg: 244 244 250; --nx-panel: 255 255 255; --nx-line: 218 218 232; }
+html[data-font="large"] { font-size: 112.5%; }
+html[data-font="xlarge"] { font-size: 125%; }
+html[data-motion="reduce"] *, html[data-motion="reduce"] *::before, html[data-motion="reduce"] *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+@media (prefers-reduced-motion: reduce) { * { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+
+body { @apply bg-nx-bg text-zinc-100 antialiased; background-image: radial-gradient(60rem 30rem at 80% -10%, rgb(var(--nx-violet) / .18), transparent); }
+.nx-input { @apply w-full rounded-lg border border-nx-line bg-nx-panel px-3 py-2 outline-none focus:border-nx-violet; }
+.nx-btn { @apply rounded-lg bg-gradient-to-r from-nx-violet to-nx-blue px-4 py-2 font-medium text-white disabled:opacity-50; }
+:focus-visible { outline: 2px solid rgb(var(--nx-violet)); outline-offset: 2px; }
+
+/* tema claro: ajusta as cores de texto/realce usadas nos componentes */
+html[data-theme="light"] body { color: #18181b; }
+html[data-theme="light"] .text-zinc-100 { color: #18181b; }
+html[data-theme="light"] .text-zinc-200 { color: #27272a; }
+html[data-theme="light"] .text-zinc-300 { color: #3f3f46; }
+html[data-theme="light"] .text-zinc-400 { color: #52525b; }
+html[data-theme="light"] .text-zinc-500 { color: #71717a; }
+html[data-theme="light"] .hover\:bg-white\/5:hover, html[data-theme="light"] .hover\:bg-white\/10:hover, html[data-theme="light"] .bg-white\/10 { background-color: rgb(0 0 0 / .06); }
+html[data-theme="light"] .text-violet-300, html[data-theme="light"] .text-violet-400 { color: #6d28d9; }
